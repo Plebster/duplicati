@@ -34,7 +34,7 @@
 - save file to computer
 ### Copy Back-up files
      cp -R ./duplicati/backups <location>
-##Local Folder Faliure Restore
+## Local Folder Faliure Restore
 ### Stop Docker-Compose and Delete folder
     docker stop lighttpd
     rm -r html
