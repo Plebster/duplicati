@@ -35,6 +35,17 @@
 ### Copy Back-up files
      cp -R ./duplicati/backups <location>
 ## Local Folder Faliure Restore
-### Stop Docker-Compose and Delete folder
+### Stop Docker-Compose and Delete/ Recreate folder
     docker stop lighttpd
     rm -r html
+    mkdir html
+### Restore Files
+ - http://localhost:8200/ngax/index.html
+- click the arrow next to backup name
+- select "Restore Files" in the operstions section
+- select tick box in file browser
+- click "Continue"
+- select tick box for Restore read/write permissions
+- click "Restore"
+### Restart HTML server
+    docker-compose up -d
