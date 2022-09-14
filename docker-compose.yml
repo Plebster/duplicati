@@ -3,6 +3,7 @@ version: "3"
 services:
   lighttpd:
     image: sebp/lighttpd
+    container_name: lighttpd
     volumes:
       - ./html:/var/www/localhost/htdocs
     ports:
