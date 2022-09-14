@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  lighttpd:
+    image: sebp/lighttpd
+    volumes:
+      - ./html:/var/www/localhost/htdocs
+    ports:
+      - 80:80
+    tty: true
+
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/London
+    volumes:
+      - ./duplicati/appdata/config:/config
+      - ./duplicati/backups:/backups
+      - ./duplicati/source:/source
+    ports:
+      - 8200:8200
+    restart: unless-stopped
