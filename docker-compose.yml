@@ -19,7 +19,7 @@ services:
     volumes:
       - ./duplicati/appdata/config:/config
       - ./duplicati/backups:/backups
-      - ./duplicati/source:/source
+      - ./html:/source
     ports:
       - 8200:8200
     restart: unless-stopped
