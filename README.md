@@ -54,8 +54,7 @@ We save a copy of the configuration details of the Backup, and we take an 'off-s
 
 # Recovery Scenarios
 ## 1. Local Folder Failure Restore
-### Stop Docker-Compose and Delete/ Recreate folder
-    ## Should this be docker-compose down or are you just stopping lighttpd?
+### Stop lighttpd and Delete/Recreate folder
     docker stop lighttpd
     rm -r html
     mkdir html
