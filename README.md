@@ -49,3 +49,37 @@
 - click "Restore"
 ### Restart HTML server
     docker-compose up -d
+## Recreate From Backup Complete Failure
+    docker-compose up -d
+    cd ..
+    sudo rm -rf duplicati
+### Pull git repo
+    git clone https://github.com/Plebster/duplicati.git
+### Start docker compose
+    cd duplicati
+    docker-compose up -d
+    docker stop lighttpd
+### Recreate  Backup
+ - http://localhost:8200/ngax/index.html
+ - select "No, my machine has only a single account"
+ - select "Add Backup"
+ - select "Import From a File"
+ - select "import metadata"
+ - select "save immediately"
+ - select "Import"
+### Copy  Backup Files
+    cp <location>/* ./duplicati/backups
+### Restore  Backup 
+ - http://localhost:8200/ngax/index.html
+ - select "Restore"
+ - select Direct restore from backup files
+ - select "Next"
+ - select Computer/backups in file browser
+ - select "Next"
+ - select "Connect"
+ - select files to restore in file browser
+ - select "Connect"
+ - select tick box in Restore read/write permissions
+ - select "Restore"
+### Restart HTML server
+    docker-compose up -d
