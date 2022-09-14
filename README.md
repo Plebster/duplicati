@@ -83,3 +83,5 @@
  - select "Restore"
 ### Restart HTML server
     docker-compose up -d
+### Repair Database
+This may need to be done to get the backup profile to work again
